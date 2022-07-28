@@ -14,6 +14,8 @@ var (
 	pkgList = []string{
 		"github.com/modern-go/reflect2",
 		"golang.org/x/sys/execabs",
+		"golang.org/x/image/vector",
+		"golang.org/x/text/language",
 	}
 	sysList = []string{
 		"golang.org/x/sys/cpu",
