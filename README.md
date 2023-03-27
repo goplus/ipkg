@@ -11,3 +11,4 @@ igop extend package
 - [github.com/modern-go/reflect2](https://github.com/modern-go/reflect2)
 - [golang.org/x/text/language](https://github.com/golang/text)
 - [golang.org/x/image/vector](https://github.com/golang/image/vector)
+- [fyne.io/fyne/v2](https://github.com/fyne-io/fyne)
