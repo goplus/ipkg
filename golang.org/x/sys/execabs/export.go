@@ -1,4 +1,4 @@
-// export by github.com/goplus/igop/cmd/qexp
+// export by github.com/goplus/ixgo/cmd/qexp
 
 package execabs
 
@@ -7,15 +7,16 @@ import (
 
 	"reflect"
 
-	"github.com/goplus/igop"
+	"github.com/goplus/ixgo"
 )
 
 func init() {
-	igop.RegisterPackage(&igop.Package{
+	ixgo.RegisterPackage(&ixgo.Package{
 		Name: "execabs",
 		Path: "golang.org/x/sys/execabs",
 		Deps: map[string]string{
 			"context":       "context",
+			"errors":        "errors",
 			"fmt":           "fmt",
 			"os/exec":       "exec",
 			"path/filepath": "filepath",
@@ -37,7 +38,7 @@ func init() {
 			"CommandContext": reflect.ValueOf(q.CommandContext),
 			"LookPath":       reflect.ValueOf(q.LookPath),
 		},
-		TypedConsts:   map[string]igop.TypedConst{},
-		UntypedConsts: map[string]igop.UntypedConst{},
+		TypedConsts:   map[string]ixgo.TypedConst{},
+		UntypedConsts: map[string]ixgo.UntypedConst{},
 	})
 }

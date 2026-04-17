@@ -1,4 +1,4 @@
-// export by github.com/goplus/igop/cmd/qexp
+// export by github.com/goplus/ixgo/cmd/qexp
 
 package language
 
@@ -8,11 +8,11 @@ import (
 	"go/constant"
 	"reflect"
 
-	"github.com/goplus/igop"
+	"github.com/goplus/ixgo"
 )
 
 func init() {
-	igop.RegisterPackage(&igop.Package{
+	ixgo.RegisterPackage(&ixgo.Package{
 		Name: "language",
 		Path: "golang.org/x/text/language",
 		Deps: map[string]string{
@@ -147,27 +147,27 @@ func init() {
 			"ParseVariant":        reflect.ValueOf(q.ParseVariant),
 			"PreferSameScript":    reflect.ValueOf(q.PreferSameScript),
 		},
-		TypedConsts: map[string]igop.TypedConst{
-			"All":              {reflect.TypeOf(q.All), constant.MakeInt64(int64(q.All))},
-			"BCP47":            {reflect.TypeOf(q.BCP47), constant.MakeInt64(int64(q.BCP47))},
-			"CLDR":             {reflect.TypeOf(q.CLDR), constant.MakeInt64(int64(q.CLDR))},
-			"Default":          {reflect.TypeOf(q.Default), constant.MakeInt64(int64(q.Default))},
-			"Deprecated":       {reflect.TypeOf(q.Deprecated), constant.MakeInt64(int64(q.Deprecated))},
-			"DeprecatedBase":   {reflect.TypeOf(q.DeprecatedBase), constant.MakeInt64(int64(q.DeprecatedBase))},
-			"DeprecatedRegion": {reflect.TypeOf(q.DeprecatedRegion), constant.MakeInt64(int64(q.DeprecatedRegion))},
-			"DeprecatedScript": {reflect.TypeOf(q.DeprecatedScript), constant.MakeInt64(int64(q.DeprecatedScript))},
-			"Exact":            {reflect.TypeOf(q.Exact), constant.MakeInt64(int64(q.Exact))},
-			"High":             {reflect.TypeOf(q.High), constant.MakeInt64(int64(q.High))},
-			"Legacy":           {reflect.TypeOf(q.Legacy), constant.MakeInt64(int64(q.Legacy))},
-			"Low":              {reflect.TypeOf(q.Low), constant.MakeInt64(int64(q.Low))},
-			"Macro":            {reflect.TypeOf(q.Macro), constant.MakeInt64(int64(q.Macro))},
-			"No":               {reflect.TypeOf(q.No), constant.MakeInt64(int64(q.No))},
-			"Raw":              {reflect.TypeOf(q.Raw), constant.MakeInt64(int64(q.Raw))},
-			"SuppressScript":   {reflect.TypeOf(q.SuppressScript), constant.MakeInt64(int64(q.SuppressScript))},
+		TypedConsts: map[string]ixgo.TypedConst{
+			"All":              {Typ: reflect.TypeOf(q.All), Value: constant.MakeInt64(int64(q.All))},
+			"BCP47":            {Typ: reflect.TypeOf(q.BCP47), Value: constant.MakeInt64(int64(q.BCP47))},
+			"CLDR":             {Typ: reflect.TypeOf(q.CLDR), Value: constant.MakeInt64(int64(q.CLDR))},
+			"Default":          {Typ: reflect.TypeOf(q.Default), Value: constant.MakeInt64(int64(q.Default))},
+			"Deprecated":       {Typ: reflect.TypeOf(q.Deprecated), Value: constant.MakeInt64(int64(q.Deprecated))},
+			"DeprecatedBase":   {Typ: reflect.TypeOf(q.DeprecatedBase), Value: constant.MakeInt64(int64(q.DeprecatedBase))},
+			"DeprecatedRegion": {Typ: reflect.TypeOf(q.DeprecatedRegion), Value: constant.MakeInt64(int64(q.DeprecatedRegion))},
+			"DeprecatedScript": {Typ: reflect.TypeOf(q.DeprecatedScript), Value: constant.MakeInt64(int64(q.DeprecatedScript))},
+			"Exact":            {Typ: reflect.TypeOf(q.Exact), Value: constant.MakeInt64(int64(q.Exact))},
+			"High":             {Typ: reflect.TypeOf(q.High), Value: constant.MakeInt64(int64(q.High))},
+			"Legacy":           {Typ: reflect.TypeOf(q.Legacy), Value: constant.MakeInt64(int64(q.Legacy))},
+			"Low":              {Typ: reflect.TypeOf(q.Low), Value: constant.MakeInt64(int64(q.Low))},
+			"Macro":            {Typ: reflect.TypeOf(q.Macro), Value: constant.MakeInt64(int64(q.Macro))},
+			"No":               {Typ: reflect.TypeOf(q.No), Value: constant.MakeInt64(int64(q.No))},
+			"Raw":              {Typ: reflect.TypeOf(q.Raw), Value: constant.MakeInt64(int64(q.Raw))},
+			"SuppressScript":   {Typ: reflect.TypeOf(q.SuppressScript), Value: constant.MakeInt64(int64(q.SuppressScript))},
 		},
-		UntypedConsts: map[string]igop.UntypedConst{
-			"CLDRVersion":    {"untyped string", constant.MakeString(string(q.CLDRVersion))},
-			"NumCompactTags": {"untyped int", constant.MakeInt64(int64(q.NumCompactTags))},
+		UntypedConsts: map[string]ixgo.UntypedConst{
+			"CLDRVersion":    {Typ: "untyped string", Value: constant.MakeString(string(q.CLDRVersion))},
+			"NumCompactTags": {Typ: "untyped int", Value: constant.MakeInt64(int64(q.NumCompactTags))},
 		},
 	})
 }

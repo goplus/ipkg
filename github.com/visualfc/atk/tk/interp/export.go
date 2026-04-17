@@ -1,4 +1,4 @@
-// export by github.com/goplus/igop/cmd/qexp
+// export by github.com/goplus/ixgo/cmd/qexp
 
 package interp
 
@@ -8,11 +8,11 @@ import (
 	"go/constant"
 	"reflect"
 
-	"github.com/goplus/igop"
+	"github.com/goplus/ixgo"
 )
 
 func init() {
-	igop.RegisterPackage(&igop.Package{
+	ixgo.RegisterPackage(&ixgo.Package{
 		Name: "interp",
 		Path: "github.com/visualfc/atk/tk/interp",
 		Deps: map[string]string{
@@ -55,20 +55,20 @@ func init() {
 			"NewListObj":    reflect.ValueOf(q.NewListObj),
 			"NewStringObj":  reflect.ValueOf(q.NewStringObj),
 		},
-		TypedConsts: map[string]igop.TypedConst{
-			"TCL_QUEUE_HEAD": {reflect.TypeOf(q.TCL_QUEUE_HEAD), constant.MakeInt64(int64(q.TCL_QUEUE_HEAD))},
-			"TCL_QUEUE_MARK": {reflect.TypeOf(q.TCL_QUEUE_MARK), constant.MakeInt64(int64(q.TCL_QUEUE_MARK))},
-			"TCL_QUEUE_TAIL": {reflect.TypeOf(q.TCL_QUEUE_TAIL), constant.MakeInt64(int64(q.TCL_QUEUE_TAIL))},
+		TypedConsts: map[string]ixgo.TypedConst{
+			"TCL_QUEUE_HEAD": {Typ: reflect.TypeOf(q.TCL_QUEUE_HEAD), Value: constant.MakeInt64(int64(q.TCL_QUEUE_HEAD))},
+			"TCL_QUEUE_MARK": {Typ: reflect.TypeOf(q.TCL_QUEUE_MARK), Value: constant.MakeInt64(int64(q.TCL_QUEUE_MARK))},
+			"TCL_QUEUE_TAIL": {Typ: reflect.TypeOf(q.TCL_QUEUE_TAIL), Value: constant.MakeInt64(int64(q.TCL_QUEUE_TAIL))},
 		},
-		UntypedConsts: map[string]igop.UntypedConst{
-			"TCL_ALL_EVENTS":    {"untyped int", constant.MakeInt64(int64(q.TCL_ALL_EVENTS))},
-			"TCL_DONT_WAIT":     {"untyped int", constant.MakeInt64(int64(q.TCL_DONT_WAIT))},
-			"TCL_ERROR":         {"untyped int", constant.MakeInt64(int64(q.TCL_ERROR))},
-			"TCL_FILE_EVENTS":   {"untyped int", constant.MakeInt64(int64(q.TCL_FILE_EVENTS))},
-			"TCL_IDLE_EVENTS":   {"untyped int", constant.MakeInt64(int64(q.TCL_IDLE_EVENTS))},
-			"TCL_OK":            {"untyped int", constant.MakeInt64(int64(q.TCL_OK))},
-			"TCL_TIMER_EVENTS":  {"untyped int", constant.MakeInt64(int64(q.TCL_TIMER_EVENTS))},
-			"TCL_WINDOW_EVENTS": {"untyped int", constant.MakeInt64(int64(q.TCL_WINDOW_EVENTS))},
+		UntypedConsts: map[string]ixgo.UntypedConst{
+			"TCL_ALL_EVENTS":    {Typ: "untyped int", Value: constant.MakeInt64(int64(q.TCL_ALL_EVENTS))},
+			"TCL_DONT_WAIT":     {Typ: "untyped int", Value: constant.MakeInt64(int64(q.TCL_DONT_WAIT))},
+			"TCL_ERROR":         {Typ: "untyped int", Value: constant.MakeInt64(int64(q.TCL_ERROR))},
+			"TCL_FILE_EVENTS":   {Typ: "untyped int", Value: constant.MakeInt64(int64(q.TCL_FILE_EVENTS))},
+			"TCL_IDLE_EVENTS":   {Typ: "untyped int", Value: constant.MakeInt64(int64(q.TCL_IDLE_EVENTS))},
+			"TCL_OK":            {Typ: "untyped int", Value: constant.MakeInt64(int64(q.TCL_OK))},
+			"TCL_TIMER_EVENTS":  {Typ: "untyped int", Value: constant.MakeInt64(int64(q.TCL_TIMER_EVENTS))},
+			"TCL_WINDOW_EVENTS": {Typ: "untyped int", Value: constant.MakeInt64(int64(q.TCL_WINDOW_EVENTS))},
 		},
 	})
 }
