@@ -12,7 +12,7 @@ import (
 
 var (
 	pkgList = []string{
-		"github.com/modern-go/reflect2",
+		"github.com/visualfc/atk/...",
 		"golang.org/x/sys/execabs",
 		"golang.org/x/image/vector",
 		"golang.org/x/text/language",
@@ -54,18 +54,15 @@ func main() {
 	// 	fname = "go114_pkgs.go"
 	// }
 
-	pkgs := pkgList
-
-	// log.Println(ver, name, tags)
-	log.Println(pkgs)
-
-	cmd := exec.Command("qexp", "-outdir", ".", "-addtags", tags, "-filename", name)
-	cmd.Args = append(cmd.Args, pkgs...)
-	cmd.Stderr = os.Stderr
-	cmd.Stdout = os.Stdout
-	err := cmd.Run()
-	if err != nil {
-		panic(err)
+	for _, pkg := range pkgList {
+		cmd := exec.Command("qexp", "-outdir", ".", "-addtags", tags, "-filename", name)
+		cmd.Args = append(cmd.Args, pkg)
+		cmd.Stderr = os.Stderr
+		cmd.Stdout = os.Stdout
+		err := cmd.Run()
+		if err != nil {
+			panic(err)
+		}
 	}
 
 	list := osarchList()
@@ -88,7 +85,7 @@ func main() {
 	}
 }
 
-//skip syscall
+// skip syscall
 func stdList() []string {
 	cmd := exec.Command("go", "list", "std")
 	data, err := cmd.Output()
